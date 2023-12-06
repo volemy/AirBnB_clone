@@ -60,3 +60,65 @@ class TestBaseModel(unittest.TestCase):
         my_model = BaseModel()
         uuid2 = my_model.id
         self.assertNotEqual(uuid1, uuid2)
+
+    def test_init_with_dict_represenation(self):
+        """Test initialization with dictionary representation"""
+        sample_dict = {
+            'id': '123e4567-e89b-12d3-a456-426614174000',
+            'created_at': '2023-01-01T12:00:00.000000',
+            'updated_at': '2023-01-02T12:00:00.000000',
+            'name': 'Test Model',
+            'my_number': 42
+        }
+
+        new_model = BaseModel(**sample_dict)
+        self.assertEqual(new_model.id, '123e4567-e89b-12d3-a456-426614174000')
+        self.assertEqual(type(new_model.created_at), datetime)
+        self.assertEqual(type(new_model.updated_at), datetime)
+        self.assertEqual(new_model.name, 'Test Model')
+        self.assertEqual(new_model.my_number, 42)
+
+    def test_init_with_dict_created_at_conversion(self):
+        """Test initialization with created_at conversion"""
+        sample_dict = {
+            'id': '123e4567-e89b-12d3-a456-426614174000',
+            'created_at': '2023-01-01T12:00:00.000000',
+            'updated_at': '2023-01-02T12:00:00.000000',
+            'name': 'Test Model',
+            'my_number': 42
+        }
+
+        new_model = BaseModel(**sample_dict)
+        self.assertEqual(type(new_model.created_at), datetime)
+
+    def test_init_with_dict_updated_at_conversion(self):
+        """Test initialization with updated_at conversion"""
+        sample_dict = {
+            'id': '123e4567-e89b-12d3-a456-426614174000',
+            'created_at': '2023-01-01T12:00:00.000000',
+            'updated_at': '2023-01-02T12:00:00.000000',
+            'name': 'Test Model',
+            'my_number': 42
+        }
+
+        new_model = BaseModel(**sample_dict)
+        self.assertEqual(type(new_model.updated_at), datetime)
+
+    def test_init_with_empty_dict(self):
+        """Test initialization with an empty dictionary"""
+        new_model = BaseModel(**{})
+        self.assertNotEqual(new_model.id, None)
+        self.assertEqual(type(new_model.created_at), datetime)
+        self.assertEqual(type(new_model.updated_at), datetime)
+
+    def test_init_with_single_attribute_dict(self):
+        """Test initialization with a dictionary containing a single attribute"""
+        sample_dict = {'name': 'Single Attribute'}
+        new_model = BaseModel(**sample_dict)
+        self.assertEqual(new_model.name, 'Single Attribute')
+
+    def test_init_with_invalid_attribute(self):
+        """Test initialization with an invalid attribute"""
+        sample_dict = {'name': 'Invalid Attribute', 'invalid': 'Invalid'}
+        new_model = BaseModel(**sample_dict)
+        self.assertEqual(new_model.name, 'Invalid Attribute')
