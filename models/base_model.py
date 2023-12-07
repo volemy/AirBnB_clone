@@ -6,6 +6,7 @@ for other models within the AirBnB project.
 
 from datetime import datetime
 from uuid import uuid4
+import models
 
 datetime_format = "%Y-%m-%dT%H:%M:%S.%f"
 
@@ -36,6 +37,7 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """ This method returns a string representation of an instance """
@@ -45,6 +47,7 @@ class BaseModel:
         """ This method updates the instance attribute updated_at with
         the current datetime """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """ This method is the first piece of serialization/deserialization
