@@ -4,12 +4,12 @@ This filestorage class serializes instances to a JSON format.
 """
 
 import json
+from models.base_model import BaseModel
 
 class FileStorage():
     """This class serializes instances to a JSON  format"""
     __file_path = "file.json"
     __objects = {}
-    class_dict = {}
 
     def all(self):
         """ This method returns the dictionary of all objects """
@@ -37,9 +37,9 @@ class FileStorage():
         try:
             with open(self.__file_path, "r") as f:
                 info = json.load(f)
-            for key, obj_info in info.items():
-                class_name, obj_id = key.split('.')
-                obj = self.class_dict[obj_info['__class__']](**obj_info)
-                self.__objects[key] = obj
+                for key, value in info.items():
+                    class_name, obj_id = key.split('.')
+                    obj = globals()[class_name](**value)
+                    self.__objects[key] = obj
         except FileNotFoundError:
             pass
