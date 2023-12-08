@@ -4,6 +4,7 @@
 import unittest
 from models.base_model import BaseModel
 from datetime import datetime
+from models.engine.file_storage import FileStorage
 import uuid
 
 
@@ -122,3 +123,26 @@ class TestBaseModel(unittest.TestCase):
         sample_dict = {'name': 'Invalid Attribute', 'invalid': 'Invalid'}
         new_model = BaseModel(**sample_dict)
         self.assertEqual(new_model.name, 'Invalid Attribute')
+
+    def test_save_method_file_storage(self):
+        """Test if BaseModel instance is saved via FileStorage"""
+        fs = FileStorage()
+        new_model = BaseModel()
+        fs.new(new_model)
+        new_model.save()
+        with open(fs._FileStorage__file_path, 'r') as file:
+            data = file.read()
+            self.assertIn(new_model.id, data)
+
+    def test_reload_method_file_storage(self):
+        """Test if BaseModel instance is reloaded via FileStorage"""
+        fs = FileStorage()
+        new_model = BaseModel()
+        fs.new(new_model)
+        new_model.save()
+        fs.reload()
+        self.assertIn(f"{new_model.__class__.__name__}.{new_model.id}", fs.all())
+
+
+if __name__ == '__main__':
+    unittest.main()
