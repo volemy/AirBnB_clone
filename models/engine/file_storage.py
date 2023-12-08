@@ -5,11 +5,29 @@ This filestorage class serializes instances to a JSON format.
 
 import json
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 class FileStorage():
     """This class serializes instances to a JSON  format"""
     __file_path = "file.json"
     __objects = {}
+
+    def classes(self):
+        """ this method returns a dictionary of classes"""
+        return {
+                "Basemodel": BaseModel,
+                "User": User
+                "State": State
+                "City": City
+                "Amenity": Amenity
+                "Place": Place
+                "Review": Review
+                }
 
     def all(self):
         """ This method returns the dictionary of all objects """
