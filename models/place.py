@@ -2,6 +2,7 @@
 """This module contains a place class that inherits from BaseModel"""
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     """This class inherits from the BaseModel"""
     city_id = ""
@@ -15,4 +16,3 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
-

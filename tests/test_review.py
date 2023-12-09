@@ -26,7 +26,8 @@ class TestReview(unittest.TestCase):
         new_review.user_id = "123e4567-e89b-12d3-a456-426614174000"
         new_review.text = "A city in the United States"
         self.assertEqual(new_review.place_id, "NY")
-        self.assertEqual(new_review.user_id, "123e4567-e89b-12d3-a456-426614174000")
+        self.assertEqual(new_review.user_id,
+                         "123e4567-e89b-12d3-a456-426614174000")
         self.assertEqual(new_review.text, "A city in the United States")
 
     def test_review_init_with_dict(self):
@@ -45,7 +46,8 @@ class TestReview(unittest.TestCase):
         self.assertEqual(type(new_review.created_at), datetime)
         self.assertEqual(type(new_review.updated_at), datetime)
         self.assertEqual(new_review.place_id, 'NY')
-        self.assertEqual(new_review.user_id, '123e4567-e89b-12d3-a456-426614174000')
+        self.assertEqual(new_review.user_id,
+                         '123e4567-e89b-12d3-a456-426614174000')
         self.assertEqual(new_review.text, 'A city in the United States')
 
 

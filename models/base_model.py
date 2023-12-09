@@ -9,6 +9,7 @@ from uuid import uuid4
 
 datetime_format = "%Y-%m-%dT%H:%M:%S.%f"
 
+
 class BaseModel:
     """
     This is the BaseModel class method.
@@ -27,8 +28,10 @@ class BaseModel:
         """
         if kwargs:
             for attribute_name, value in kwargs.items():
-                if attribute_name == 'created_at' or attribute_name == 'updated_at':
-                    setattr(self, attribute_name, datetime.strptime(value, datetime_format))
+                if attribute_name == 'created_at'
+                or attribute_name == 'updated_at':
+                    setattr(self, attribute_name,
+                            datetime.strptime(value, datetime_format))
                 elif attribute_name != '__class__':
                     setattr(self, attribute_name, value)
         else:
@@ -40,7 +43,8 @@ class BaseModel:
 
     def __str__(self):
         """ This method returns a string representation of an instance """
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format
+    (self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         """ This method updates the instance attribute updated_at with

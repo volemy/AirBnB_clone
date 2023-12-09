@@ -44,7 +44,8 @@ class TestPlace(unittest.TestCase):
                                  "123e4567-e89b-12d3-a456-426614174001"]
 
         self.assertEqual(new_place.city_id, "NY")
-        self.assertEqual(new_place.user_id, "123e4567-e89b-12d3-a456-426614174000")
+        self.assertEqual(new_place.user_id,
+                         "123e4567-e89b-12d3-a456-426614174000")
         self.assertEqual(new_place.name, "New York")
         self.assertEqual(new_place.description, "A city in the United States")
         self.assertEqual(new_place.number_rooms, 5)

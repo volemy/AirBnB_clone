@@ -113,7 +113,9 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(type(new_model.updated_at), datetime)
 
     def test_init_with_single_attribute_dict(self):
-        """Test initialization with a dictionary containing a single attribute"""
+        """
+        Test initialization with a dictionary containing a single attribute
+        """
         sample_dict = {'name': 'Single Attribute'}
         new_model = BaseModel(**sample_dict)
         self.assertEqual(new_model.name, 'Single Attribute')
@@ -141,7 +143,8 @@ class TestBaseModel(unittest.TestCase):
         fs.new(new_model)
         new_model.save()
         fs.reload()
-        self.assertIn(f"{new_model.__class__.__name__}.{new_model.id}", fs.all())
+        self.assertIn(f"{new_model.__class__.__name__}
+                      .{new_model.id}", fs.all())
 
 
 if __name__ == '__main__':

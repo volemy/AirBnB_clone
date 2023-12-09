@@ -2,6 +2,7 @@
 """This module contains a class user that inherits from BaseModel"""
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
     """This user class inherits from BaseModel"""
 

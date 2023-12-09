@@ -31,7 +31,8 @@ class TestAmenity(unittest.TestCase):
         """Test for __str__ method"""
         new_amenity = Amenity()
         new_amenity.name = "Test Amenity"
-        string = "[Amenity] ({}) {}".format(new_amenity.id, new_amenity.__dict__)
+        string = "[Amenity] ({}) {}".format
+        (new_amenity.id, new_amenity.__dict__)
         self.assertEqual(string, str(new_amenity))
 
     def test_amenity_save(self):
@@ -61,7 +62,8 @@ class TestAmenity(unittest.TestCase):
         }
 
         new_amenity = Amenity(**sample_dict)
-        self.assertEqual(new_amenity.id, '123e4567-e89b-12d3-a456-426614174000')
+        self.assertEqual(new_amenity.id,
+                         '123e4567-e89b-12d3-a456-426614174000')
         self.assertEqual(type(new_amenity.created_at), datetime)
         self.assertEqual(type(new_amenity.updated_at), datetime)
         self.assertEqual(new_amenity.name, 'Test Amenity')
