@@ -21,11 +21,11 @@ class FileStorage():
         """ this method returns a dictionary of classes"""
         return {
                 "Basemodel": BaseModel,
-                "User": User
-                "State": State
-                "City": City
-                "Amenity": Amenity
-                "Place": Place
+                "User": User,
+                "State": State,
+                "City": City,
+                "Amenity": Amenity,
+                "Place": Place,
                 "Review": Review
                 }
 
