@@ -11,6 +11,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
     """ This class contains command interpreter for program """
     class_dict = {
@@ -142,7 +143,8 @@ class HBNBCommand(cmd.Cmd):
             instance_key = "{}.{}".format(args[0], args[1])
             attribute_value = args[3].strip('\"').strip('\'')
             attribute_type = type(eval(args[3]))
-            setattr(storage.all()[instance_key], args[2], attribute_type(attribute_value))
+            setattr(storage.all()[instance_key], args[2],
+                    attribute_type(attribute_value))
             storage.all()[instance_key].save()
 
 
