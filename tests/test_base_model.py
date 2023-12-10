@@ -143,8 +143,8 @@ class TestBaseModel(unittest.TestCase):
         fs.new(new_model)
         new_model.save()
         fs.reload()
-        self.assertIn(f"{new_model.__class__.__name__}
-                      .{new_model.id}", fs.all())
+        self.assertIn(
+                f"{new_model.__class__.__name__}.{new_model.id}", fs.all())
 
 
 if __name__ == '__main__':

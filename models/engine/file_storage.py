@@ -21,14 +21,14 @@ class FileStorage():
     def classes(self):
         """ this method returns a dictionary of classes"""
         return {
-                "Basemodel": BaseModel,
-                "User": User,
-                "State": State,
-                "City": City,
-                "Amenity": Amenity,
-                "Place": Place,
-                "Review": Review
-                }
+            "Basemodel": BaseModel,
+            "User": User,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Place": Place,
+            "Review": Review
+        }
 
     def all(self):
         """ This method returns the dictionary of all objects """
