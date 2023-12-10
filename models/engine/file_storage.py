@@ -21,7 +21,7 @@ class FileStorage():
     def classes(self):
         """ this method returns a dictionary of classes"""
         return {
-            "Basemodel": BaseModel,
+            "BaseModel": BaseModel,
             "User": User,
             "State": State,
             "City": City,
@@ -36,16 +36,17 @@ class FileStorage():
 
     def new(self, obj):
         """ This method adds a new object to the __objects dictionary """
-        key = "{}.{}".format(obj.__class__.__name__, obj.id)
+        key = f"{obj.__class__.__name__}.{obj.id}"
         self.__objects[key] = obj
 
     def save(self):
         """
         This method serializes __objects to the JSON file
         """
-        new_serialized_obj = {}
-        for key, obj in self.__objects.items():
-            new_serialized_obj[key] = obj.to_dict()
+        new_serialized_obj = {
+                f"{obj.__class__.__name__}.{obj.id}":obj.to_dict()
+                for obj in self.__objects.values()
+                }
 
         with open(self.__file_path, "w") as f:
             json.dump(new_serialized_obj, f)
