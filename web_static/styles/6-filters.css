@@ -57,3 +57,16 @@ button:hover {
 .amenities:hover .popover {
 	display: block;
 }
+
+h3 {
+	font-weight: 600;
+	margin-top: 12px;
+	margin-bottom: 5px;
+}
+
+h4 {
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: 5px;
+	margin-bottom: 12px;
+}
