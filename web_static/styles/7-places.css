@@ -7,7 +7,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
 }
 
 article {
@@ -16,6 +15,17 @@ article {
   margin: 20px;
   border: 1px solid #FF5A5F;
   border-radius: 4px;
+}
+
+h1 {
+	display: block;
+	text-align: left;
+	width: 95%;
+	display: block;
+	margin-top: 0px;
+	margin-left: 20px;
+	margin-bottom: 5px;
+	font-size: 30px;
 }
 
 article h2 {
