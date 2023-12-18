@@ -41,13 +41,11 @@ button:hover {
 
 h3 {
 	font-weight: 600;
-	margin-top: 12px;
-	margin-bottom: 5px;
+	padding-left: 15%;
 }
 
 h4 {
 	font-size: 14px;
 	font-weight: 400;
-	margin-top: 5px;
-	margin-bottom: 12px;
+	padding-left: 15%;
 }
