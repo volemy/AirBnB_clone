@@ -68,3 +68,30 @@ article h2 {
 	margin: 10px auto;
 	padding: 0px;
 }
+
+.guest_icon {
+	display: inline-block;
+	background-image: url("../images/icon_group.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px;
+	height: 50px;
+}
+
+.bed_icon {
+	display: inline-block;
+	background-image: url("../images/icon_bed.png");
+	background-repeat: no-repeat;
+	background-position: center;
+    width: 50px;
+    height: 50px;
+}
+
+.bath_icon {
+	display: inline-block;
+	background-image: url("../images/icon_bath.png");
+	background-repeat: no-repeat;
+	background-position: center;
+    width: 50px;
+    height: 50px;
+}
