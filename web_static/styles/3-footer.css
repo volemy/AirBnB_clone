@@ -3,14 +3,16 @@
  */
 
 footer {
-	background-color: #ffffff;
-	height: 60px;
-	width: 100%;
-	bottom: 0;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
-	display: flex;
-	position: absolute;
-	border-top: 1px solid #cccccc;
+    background-color: #ffffff;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
