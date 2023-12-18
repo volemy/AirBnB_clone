@@ -26,20 +26,15 @@ button:hover {
 	opacity: 0.9;
 }
 
-.locations {
+.locations, .amenities {
 	display: inline-block;
-
 	height: 100%;
 	width: 25%;
-
-	border-right: 1px solid #DDDDDD;
+	margin-left: 30px;
 }
 
-.amenities {
-	display: inline-block;
-
-	height: 100%;
-	width: 25%;
+.locations {
+	border-left: 1px solid #DDDDDD;
 }
 
 h3 {
