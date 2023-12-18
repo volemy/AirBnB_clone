@@ -26,51 +26,62 @@ button:hover {
 	opacity: 0.9;
 }
 
+.locations,
+.amenities {
+	display: inline;
+	vertical-align: middle;
+	float: left;
+	height: 100%;
+	width: 25%;
+	line-height: 20px;
+}
+
 .locations {
 	border-right: 1px solid #DDDDDD;
 }
 
-.locations,
-.amenities {
+.popover {
+	display: none;
+	list-style-type: none;
+	background-color: #FAFAFA;
+	width: 100%;
+
+	border: 1px solid #DDDDDD;
+	border-radius: 4px;
+
+	margin-left: -1px;
+	margin-top: 8px;
+	padding: 25px 0px;
+}
+
+.locations:hover .popover,
+.amenities:hover .popover {
 	display: inline-block;
-	vertical-align: middle;
-	height: 100%;
-	width: 25%;
-	margin-left: 45px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	padding-bottom: 20px;
 }
 
 h2 {
 	font-size: 16px;
-	margin: 0;
+	padding-left: 30px;
+	margin: 0px;
 }
 
 h3 {
 	font-weight: 600;
 	margin-top: 12px;
 	margin-bottom: 5px;
+	padding-left: 45px;
 }
 
 h4 {
 	font-size: 14px;
 	font-weight: 400;
 	margin-top: 5px;
-	margin-bottom: 12px;
-}
-
-.popover {
-	background-color: #FAFAFA;
-	border: 1px solid #DDDDDD;
-	border-radius: 4px;
-	display: none;
-	position: absolute;
-}
-
-.locations .popover,
-.amenities .popover {
-	display: none;
-}
-
-.locations:hover .popover,
-.amenities:hover .popover {
-	display: block;
+	margin-bottom: 5px;
+	padding-left: 45px;
 }
