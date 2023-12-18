@@ -52,7 +52,7 @@ article {
 	border-top: 1px solid #DDDDDD;
 	border-bottom: 1px solid #DDDDDD;
 	width: 100%;
-	text-align: left;
+	align-items: left;
 	padding-top: 5px;
 	padding-bottom: 10px;
 	margin-top: 10px;
