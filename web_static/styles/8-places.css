@@ -18,6 +18,15 @@ article {
 	border-radius: 4px;
 }
 
+.headline {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+
+	height: 80px;
+	width: 100%;
+}
+
 .price_by_night {
 	display: flex;
 	justify-content: center;
