@@ -10,7 +10,7 @@
 	border-radius: 4px;
 }
 
-.filters button {
+button {
 	font-size: 18px;
 	background-color: #ff5a5f;
 	height: 48px;
@@ -20,6 +20,6 @@
 	margin: 11px 30px;
 }
 
-.filters button:hover {
+button:hover {
 	opacity: 0.9;
 }
