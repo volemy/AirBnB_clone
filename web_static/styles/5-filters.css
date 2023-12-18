@@ -28,22 +28,34 @@ button:hover {
 
 .locations {
 	display: inline-block;
+	vertical-align: middle;
+
 	height: 100%;
 	width: 25%;
+
+	margin-left: 45px;
 	border-right: 1px solid #DDDDDD;
 }
 
 .amenities {
 	display: inline-block;
+	vertical-align: middle;
+
 	height: 100%;
-	width: 25%;
+    width: 25%;
+
+	margin-left: 45px;
 }
 
 h3 {
 	font-weight: 600;
+	margin-top: 12px;
+	margin-bottom: 5px;
 }
 
 h4 {
 	font-size: 14px;
 	font-weight: 400;
+	margin-top: 5px;
+	margin-bottom: 12px;
 }
