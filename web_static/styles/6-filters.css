@@ -45,7 +45,7 @@ button:hover {
 
 .locations:hover .popover,
 .amenities:hover .popover {
-	display: block;
+	display: inline-block;
 }
 
 .popover {
