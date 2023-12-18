@@ -38,23 +38,40 @@ button:hover {
 	border-right: 1px solid #DDDDDD;
 }
 
-.locations .hover,
-.amenities .hover {
-	background-color: #FAFAFA;
+.filters .locations:hover,
+.filters .amenities:hover {
+	background-color: #fafafa;
 }
 
-.locations:hover .popover,
-.amenities:hover .popover {
-	display: inline-block;
-}
-
-.popover {
-	display: none;
-	background-color: #FAFAFA;
-	border: 1px solid #DDDDDD;
+.filters .popover {
+	background-color: #fafafa;
+	border: 1px solid #dddddd;
 	border-radius: 4px;
+	display: none;
 	position: absolute;
-	width: 100%
+	width: 100%;
+}
+
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover{
+    display: block;
+}
+
+.filters .locations ul{
+	padding: 6px 0 6px 0;
+	list-style-type: none;
+}
+
+.filters .amenities ul{
+	list-style-type: none;
+}
+
+.filters .locations li {
+	margin: 0 auto 12px 3em;
+}
+
+.filters .amenities li {
+	margin: 12px auto 12px 30px;
 }
 
 h2 {
