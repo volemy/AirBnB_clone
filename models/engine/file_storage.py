@@ -36,18 +36,11 @@ class FileStorage():
         Return:
             list of objects of one type of class
         """
-        list_objects = {}
-
-        if cls:
-            for key, value in self.__objects.items():
-                class_name, obj_id = key.split('.')
-                if class_name == __cls.name__:
-                    list_objects[key] = value
+        if cls is None:
+            return self.__objects
         else:
-            list_objects = self.__objects
-
-        return list_objects
-
+            return {key: obj for key, obj in self.__objects.items()
+                    if isinstance(obj, cls)}
 
     def new(self, obj):
         """ This method adds a new object to the __objects dictionary """
@@ -84,8 +77,6 @@ class FileStorage():
         This method deletes obj froem __objects if its inside and
         does not do anything if obj equals to None
         """
-        if obj:
-            key = "{}".{}.format(type(obj).__name__, obj.id)
-            if key in self.__objects:
+        if obj is not None:
+            key = "{}.{}".format(type(obj).__name__, obj.id)
                 del self.__objects[key]
-                self.save()
